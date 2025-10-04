@@ -1,4 +1,15 @@
 <?php
+// Allow requests from anywhere (or restrict to your frontend domain)
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+// Handle preflight OPTIONS request (for POST with JSON or custom headers)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
 // PostgreSQL connection settings from Render
 $host = getenv('DB_HOST');       // e.g., your-db-host.render.com
 $port = getenv('DB_PORT') ?: '5432';
