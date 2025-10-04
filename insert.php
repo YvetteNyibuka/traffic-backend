@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "https://traffic-backend-6ykq.onrender.com";
 $username = "root";   // default for XAMPP
 $password = "";       // default is empty
 $dbname = "trafficdb";
